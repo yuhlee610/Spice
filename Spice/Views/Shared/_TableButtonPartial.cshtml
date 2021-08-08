@@ -1,0 +1,17 @@
+﻿@model int
+
+<td style="width: 150px;">
+    <div class="btn-group" role="group">
+        <a style="width: 50px;" class="btn btn-primary text-white" asp-action="Edit" asp-route-id="@Model">
+            <i class="far fa-edit"></i>
+        </a>
+
+        <a style="width: 50px;" class="btn btn-success text-white" asp-action="Details" asp-route-id="@Model">
+            <i class="fas fa-info"></i>
+        </a>
+
+        <a style="width: 50px;" class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@Model">
+            <i class="far fa-trash-alt"></i>
+        </a>
+    </div>
+</td> 

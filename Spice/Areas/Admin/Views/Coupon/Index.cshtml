@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Coupon>
+
+<br />
+<br />
+
+<div class="border backgroundWhite">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-info">Coupon list</h2>
+        </div>
+        <div class="text-right col-6">
+            <partial name="_CreateButtonPartial" />
+        </div>
+    </div>
+    <br />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-striped border">
+            <tr class="table-primary">
+                <th>
+                    @Html.DisplayNameFor(m => m.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.Discount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.MinimumAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.IsActive)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.MinimumAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.IsActive)
+            </td>
+            <td>
+                <partial name="_TableButtonPartial" model="item.Id" />
+            </td>
+        </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <h3 class="text-secondary">No coupon exists</h3>
+    }
+</div>
